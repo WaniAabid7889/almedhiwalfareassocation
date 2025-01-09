@@ -1,3 +1,10 @@
+.navIcon{
+  color: white!important;
+}
+
+#navId{
+  z-index: 999;
+}
 
 .navbar-brand {
   font-size: 1.5rem;
@@ -50,15 +57,14 @@ nav ul li .active-link {
 
 .nav-item.dropdown {
   position: relative;
+  top:2px;
 }
 
 .nav-item .dropdown-menu {
-  display: block; /* Keep it block for smoothness */
-  opacity: 0;
+  display: inline-block;
+  position:absolute;
   visibility: hidden;
   transform: translateY(-10px); /* Slightly shift upwards */
-  position: relative;
-  top: 100%;
   left: 0;
   z-index: 1000;
   background-color:#fff;
@@ -67,9 +73,7 @@ nav ul li .active-link {
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth easing */
 } 
 
-.marq, marquee{
-  z-index: -2;
-}
+
 
 .nav-item:hover .dropdown-menu {
   opacity: 1;
@@ -302,4 +306,32 @@ nav ul li .active-link {
 
 .icon:hover {
   transform: scale(1.2);
+}
+
+.form-check-input.light-theme {
+  /* background-color: #5b6397; */
+  border-color: #aaa;
+}
+
+.form-check-input.dark-theme {
+  /* background-color: #007bff;  */
+  border-color: #0056b3; 
+}
+
+.form-check-input:checked.light-theme {
+  background-color: #007bff; 
+}
+
+.form-check-input:checked.dark-theme {
+  background-color: #0056b3; 
+}
+
+.navbar-toggler-icon.light-theme {
+  color: black;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler-icon.dark-theme {
+  /* background-color: white; */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }

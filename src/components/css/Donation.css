@@ -114,3 +114,12 @@
   .form-footer a:hover {
     text-decoration: underline;
   }
+
+  .light-mode::placeholder {
+    color: gray;
+  }
+  
+  /* Dark mode placeholder style */
+  .dark-mode::placeholder {
+    color: white;
+  }

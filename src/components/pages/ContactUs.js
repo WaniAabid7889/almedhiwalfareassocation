@@ -19,13 +19,13 @@ const ContactUs = () => {
     address: "",
   });
 
-    // const handleInputChange = (e) => {
-    //   const { name, value } = e.target;
-    //   setFormData((prevState) => ({
-    //     ...prevState,
-    //     [name]: value,
-    //   }));
-    // };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +50,8 @@ const ContactUs = () => {
     }
   };
 
+ 
+
   return (
     <div>
       <ToastContainer />
@@ -67,6 +69,10 @@ const ContactUs = () => {
               type="text"
               name="name"
               placeholder="Your Name"
+              style={{
+                backgroundColor: theme === "light" ? "white" : "#212529",
+                color: theme === "light" ? "black" : "white",
+              }}
               value={formData.name}
               onChange={(e) =>
                 setFormData({
@@ -74,7 +80,7 @@ const ContactUs = () => {
                   name: e.target.value.replace(/[^a-zA-Z\s]/g, ""), // Allows only letters and spaces
                 })
               }
-              className="input form-control"
+              className={`input form-control ${theme === "light" ? "light-mode" : "dark-mode"}`}
               aria-label="Your Name"
               required
               minLength={3} // Minimum 3 characters
@@ -85,11 +91,16 @@ const ContactUs = () => {
               type="email"
               name="email"
               placeholder="Your Email"
+              style={{
+                backgroundColor: theme === "light" ? "white" : "#212529",
+                color: theme === "light" ? "black" : "white",
+              }}
+     
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className="input form-control"
+              className={`input form-control ${theme === "light" ? "light-mode" : "dark-mode"}`}
               aria-label="Your Email"
               required
             />
@@ -99,6 +110,10 @@ const ContactUs = () => {
               name="phone"
               placeholder="Your Phone Number"
               value={formData.phone}
+              style={{
+                backgroundColor: theme === "light" ? "white" : "#212529",
+                color: theme === "light" ? "black" : "white",
+              }}
               onChange={(e) => {
                 const phone = e.target.value;
                 if (/^\d{0,10}$/.test(phone)) {
@@ -106,22 +121,25 @@ const ContactUs = () => {
                   setFormData({ ...formData, phone });
                 }
               }}
-              className="input form-control"
+              className={`input form-control ${theme === "light" ? "light-mode" : "dark-mode"}`}
               aria-label="Your Phone Number"
               required
               maxLength={10} // Restricts to 10 characters
             />
 
-          
             <textarea
               name="address"
               placeholder="Your Message"
               rows="4"
               value={formData.address}
+              style={{
+                backgroundColor: theme === "light" ? "white" : "#212529",
+                color: theme === "light" ? "black" : "white",
+              }}
               onChange={(e) =>
                 setFormData({ ...formData, address: e.target.value })
               }
-              className="input textarea form-control"
+              className={`input textarea form-control ${theme === "light" ? "light-mode" : "dark-mode"}`}
               aria-label="Your Message"
               required
               minLength={10} // Minimum 10 characters
@@ -138,6 +156,7 @@ const ContactUs = () => {
           <iframe
             title="Our Location"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d395.44281358273304!2d74.6245913785118!3d34.207105279087045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2sin!4v1734933563263!5m2!1sen!2sin"
+
             width="600"
             height="450"
             className="map"
@@ -154,7 +173,7 @@ const ContactUs = () => {
               style={{ color: "#007bff", fontSize: "30px", margin: "10px" }}
             />
             <h3 style={{ color: " #007bff" }}>Our Address</h3>
-            <p>Rakhi Shilvath Shiganpora Sumbal Sonawari J&K</p>
+            <p style={{ color: theme === "light" ? " " : "#fff"}} >Rakhi Shilvath Shiganpora Sumbal Sonawari J&K</p>
           </div>
 
           <div className={`card bg-${theme}`}>
@@ -163,7 +182,7 @@ const ContactUs = () => {
               style={{ color: "#007bff", fontSize: "30px", margin: "10px" }}
             />
             <h3 style={{ color: " #007bff" }}>Email Us</h3>
-            <p>almehdiwelfareassociation14@gmail.com</p>
+            <p style={{ color: theme === "light" ? " " : "#fff"}}>almehdiwelfareassociation14@gmail.com</p>
           </div>
 
           <div className={`card bg-${theme}`}>
@@ -173,7 +192,7 @@ const ContactUs = () => {
               style={{ color: "#007bff", fontSize: "30px", margin: "10px" }}
             />
             <h3 style={{ color: " #007bff" }}>Call Us</h3>
-            <p>+91 7051165918 | 6006727007</p>
+            <p style={{ color: theme === "light" ? " " : "#fff" }}>+91 7051165918 | 6006727007</p>
           </div>
         </div>
       </div>

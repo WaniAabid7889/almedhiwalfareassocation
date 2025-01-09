@@ -48,6 +48,7 @@
   
   .gallery-item img:hover {
     transform: scale(1.05);
+    z-index: 999;
   }
   
   /* Media Queries */

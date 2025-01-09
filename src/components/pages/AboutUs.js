@@ -15,13 +15,17 @@ const AboutUs = () => {
       <div className={`aboutUs-container`}>
         <div className={`aboutUs-card bg-${theme}`}>
           <h3 className="aboutUs-card-title">Our Vision:</h3>
-          <p>
+          <p style={{
+                color: theme === "light" ? "black" : "white",
+          }}>
             To create a world where everyone has access to basic necessities, opportunities for growth, and the chance to live with dignity.
           </p>
         </div>
         <div className={`aboutUs-card bg-${theme}`}>
           <h3 className="aboutUs-card-title">Our Mission:</h3>
-          <ul>
+          <ul style={{
+                color: theme === "light" ? "black" : "white",
+          }}>
             <li>Support education for underprivileged children.</li>
             <li>Provide healthcare assistance.</li>
             <li>Deliver food and shelter to vulnerable populations.</li>
@@ -30,7 +34,9 @@ const AboutUs = () => {
         </div>
         <div className={`aboutUs-card bg-${theme}`}>
           <h3 className="aboutUs-card-title">Our Values:</h3>
-          <ul>
+          <ul style={{
+                color: theme === "light" ? "black" : "white",
+          }}>
             <li><strong>Compassion:</strong> Addressing the needs of the less fortunate.</li>
             <li><strong>Integrity:</strong> Ensuring transparency.</li>
             <li><strong>Collaboration:</strong> Working together for shared goals.</li>
